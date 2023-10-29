@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://blimttwe86fp"]
+
+[ext_resource type="Script" path="res://fueco.gd" id="1_4mdk8"]
+[ext_resource type="Texture2D" uid="uid://dlyjynbfqld2t" path="res://assets/pokeon.jpeg" id="1_46rr0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y8fve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_46rr0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ha2u"]
+size = Vector2(180.125, 165.875)
+
+[node name="fueco" type="CharacterBody2D"]
+script = ExtResource("1_4mdk8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19998, 5.29999)
+scale = Vector2(0.175391, 0.160742)
+texture = ExtResource("1_46rr0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-0.500015, 7.75)
+scale = Vector2(0.168945, 0.162598)
+sprite_frames = SubResource("SpriteFrames_y8fve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.462494, 5.06252)
+shape = SubResource("RectangleShape2D_0ha2u")
